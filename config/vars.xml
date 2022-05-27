@@ -1,0 +1,115 @@
+
+<!-- Codecs -->
+<!-- G7221@32000h,G7221@16000h,G722,PCMU,PCMA,iLBC,GSM,H263,H264 -->
+<X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA" />
+<X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA" />
+<X-PRE-PROCESS cmd="set" data="media_mix_inbound_outbound_codecs=true" />
+
+<!-- Database -->
+<!--<X-PRE-PROCESS cmd="set" data="dsn_system=pgsql://host=library-dbsrv.postgres.database.azure.com port=5432 dbname=fusionpbx user=fusionpbx password=Ftyfh5DRgtrrmkIKj3PYseELU options='' application_name='fusionpbx'" />
+<X-PRE-PROCESS cmd="set" data="dsn=pgsql://host=library-dbsrv.postgres.database.azure.com port=5432 dbname=freeswitch user=fusionpbx password=Ftyfh5DRgtrrmkIKj3PYseELU options='' application_name='freeswitch'" />
+-->
+<!-- Defaults -->
+<X-PRE-PROCESS cmd="set" data="call_debug=false" />
+<X-PRE-PROCESS cmd="set" data="console_loglevel=info" />
+<X-PRE-PROCESS cmd="set" data="default_areacode=208" />
+<X-PRE-PROCESS cmd="set" data="sit=%(274,0,913.8);%(274,0,1370.6);%(380,0,1776.7)" />
+<X-PRE-PROCESS cmd="set" data="use_profile=internal" />
+<X-PRE-PROCESS cmd="set" data="default_language=en" />
+<X-PRE-PROCESS cmd="set" data="default_dialect=us" />
+<X-PRE-PROCESS cmd="set" data="default_voice=callie" />
+<X-PRE-PROCESS cmd="set" data="ajax_refresh_rate=3000" />
+<X-PRE-PROCESS cmd="set" data="xml_cdr_archive=dir" />
+<X-PRE-PROCESS cmd="set" data="ringback=$${ca-ring}" />
+<X-PRE-PROCESS cmd="set" data="transfer_ringback=$${ca-ring}" />
+<X-PRE-PROCESS cmd="set" data="record_ext=mp3" />
+<X-PRE-PROCESS cmd="set" data="timezone=America/Los_Angeles" />
+
+<!-- Dingaling -->
+<!-- xmpp_client_profile and xmpp_server_profile xmpp_client_profile can be any string. xmpp_server_profile is appended to "dingaling_" to form the database name containing the "subscriptions" table. used by: dingaling.conf.xml enum.conf.xml -->
+<X-PRE-PROCESS cmd="set" data="xmpp_client_profile=xmppc" />
+<X-PRE-PROCESS cmd="set" data="xmpp_server_profile=xmpps" />
+<X-PRE-PROCESS cmd="set" data="bind_server_ip=20.83.116.132" />
+
+<!-- Domain -->
+<X-PRE-PROCESS cmd="set" data="domain_name=$${domain}" />
+
+<!-- IP Address -->
+<!-- (If you''re going to load test then please input real IP addresses for external_rtp_ip and external_sip_ip)
+
+Can be an one of:
+   ip address: "12.34.56.78"
+   a stun server lookup: "stun:stun.server.com"
+   a DNS name: "host:host.server.com"
+
+where fs.mydomain.com is a DNS A record-useful when fs is on a dynamic IP address, and uses a dynamic DNS updater. If unspecified, the bind_server_ip value is used. Used by: sofia.conf.xml dingaling.conf.xml -->
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=20.83.116.132" />
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=20.83.116.132" />
+
+<!-- Music on Hold -->
+<X-PRE-PROCESS cmd="set" data="hold_music=local_stream://default" />
+
+<!-- Ringtones -->
+<!-- Default ringtone (US) -->
+<X-PRE-PROCESS cmd="set" data="us-ring=%(2000,4000,440,480)" />
+<X-PRE-PROCESS cmd="set" data="au-ring=%(400,200,383,417);%(400,2000,383,417)" />
+<X-PRE-PROCESS cmd="set" data="be-ring=%(1000,3000,425)" />
+<X-PRE-PROCESS cmd="set" data="ca-ring=%(2000,4000,440,480)" />
+<X-PRE-PROCESS cmd="set" data="cn-ring=%(1000,4000,450)" />
+<X-PRE-PROCESS cmd="set" data="cy-ring=%(1500,3000,425)" />
+<X-PRE-PROCESS cmd="set" data="cz-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="de-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="dk-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="dz-ring=%(1500,3500,425)" />
+<X-PRE-PROCESS cmd="set" data="eg-ring=%(2000,1000,475,375)" />
+<X-PRE-PROCESS cmd="set" data="fi-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="fr-ring=%(1500,3500,440)" />
+<X-PRE-PROCESS cmd="set" data="pt-ring=%(1000,5000,400)" />
+<X-PRE-PROCESS cmd="set" data="hk-ring=%(400,200,440,480);%(400,3000,440,480)" />
+<X-PRE-PROCESS cmd="set" data="hu-ring=%(1250,3750,425)" />
+<X-PRE-PROCESS cmd="set" data="il-ring=%(1000,3000,400)" />
+<X-PRE-PROCESS cmd="set" data="in-ring=%(400,200,425,375);%(400,2000,425,375)" />
+<X-PRE-PROCESS cmd="set" data="jp-ring=%(1000,2000,420,380)" />
+<X-PRE-PROCESS cmd="set" data="ko-ring=%(1000,2000,440,480)" />
+<X-PRE-PROCESS cmd="set" data="pk-ring=%(1000,2000,400)" />
+<X-PRE-PROCESS cmd="set" data="pl-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="ro-ring=%(1850,4150,475,425)" />
+<X-PRE-PROCESS cmd="set" data="rs-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="it-ring=%(1000,4000,425)" />
+<X-PRE-PROCESS cmd="set" data="ru-ring=%(800,3200,425)" />
+<X-PRE-PROCESS cmd="set" data="sa-ring=%(1200,4600,425)" />
+<X-PRE-PROCESS cmd="set" data="tr-ring=%(2000,4000,450)" />
+<X-PRE-PROCESS cmd="set" data="uk-ring=%(400,200,400,450);%(400,2000,400,450)" />
+<X-PRE-PROCESS cmd="set" data="bong-ring=v=-7;%(100,0,941.0,1477.0);v=-7;>=2;+=.1;%(1400,0,350,440)" />
+
+<!-- SIP -->
+<!-- Used to turn on sip loopback unrolling. -->
+<X-PRE-PROCESS cmd="set" data="unroll_loops=true" />
+<X-PRE-PROCESS cmd="set" data="sip_tls_version=tlsv1" />
+
+<!-- SIP Profile: External -->
+<X-PRE-PROCESS cmd="set" data="external_auth_calls=false" />
+<X-PRE-PROCESS cmd="set" data="external_sip_port=5080" />
+<X-PRE-PROCESS cmd="set" data="external_tls_port=5082" />
+<X-PRE-PROCESS cmd="set" data="external_ssl_enable=false" />
+<X-PRE-PROCESS cmd="set" data="external_ssl_dir=$${conf_dir}/ssl" />
+
+<!-- SIP Profile: Internal -->
+<X-PRE-PROCESS cmd="set" data="internal_auth_calls=true" />
+<X-PRE-PROCESS cmd="set" data="internal_sip_port=5060" />
+<X-PRE-PROCESS cmd="set" data="internal_tls_port=5061" />
+<X-PRE-PROCESS cmd="set" data="internal_ssl_enable=true" />
+<X-PRE-PROCESS cmd="set" data="internal_ssl_dir=$${conf_dir}/tls" />
+
+<!-- Sound -->
+<!-- Sets the sound directory. -->
+<X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie" />
+
+<!-- Tones -->
+<!-- Imported from vars.xml -->
+<X-PRE-PROCESS cmd="set" data="vacant-us-tone=%(274,0,913.8);%(274,0,1370.6);%(380,0,1776.7)" />
+<X-PRE-PROCESS cmd="set" data="vacant-uk-tone=%(330,15,950);%(330,15,1400);%(330,1000,1800)" />
+<X-PRE-PROCESS cmd="set" data="busy-us-tone=%(500,500,480,620)" />
+<X-PRE-PROCESS cmd="set" data="busy-au-tone=v=-13;%(375,375,420);v=-23;%(375,375,420)" />
+<X-PRE-PROCESS cmd="set" data="bong-us-tone=v=-7;%(100,0,941.0,1477.0);v=-7;>=2;+=.1;%(1400,0,350,440)" />
+
